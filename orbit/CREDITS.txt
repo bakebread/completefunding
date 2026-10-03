@@ -1,0 +1,24 @@
+Complete Funding — Concept B "Orbit" — asset provenance (reviewed 3 October 2026)
+
+Brand asset
+- assets/img/logo.svg: Existing Complete Funding logo from the source repository, reused byte-for-byte without alteration.
+- Lender logos: existing partner logos from the source repository, converted to single-colour versions for legibility (lenders-white / lenders-ink). Confirm usage rights with each lender before launch.
+
+Libraries (self-hosted)
+- GSAP 3.15 core, ScrollTrigger, SplitText: GreenSock Standard "no charge" licence (https://gsap.com/standard-license).
+- Lenis 1.3 smooth scroll: MIT licence.
+- Three.js r186: MIT licence (assets/js/THREE-LICENSE.txt). Scene source in src/scene.js, bundled to assets/js/scene.js with esbuild.
+
+Typefaces (SIL Open Font License 1.1; licences in assets/fonts/)
+- Syne (variable), Manrope (variable) via Fontsource.
+
+Photography (Pexels licence)
+- orb-car.jpg https://www.pexels.com/photo/9692675/
+- orb-yacht.jpg https://www.pexels.com/photo/5581859/ (Taryn Elliott)
+- orb-truck.jpg https://www.pexels.com/photo/2348359/
+- orb-moto.jpg https://www.pexels.com/photo/1915149/
+- orb-business.jpg https://www.pexels.com/photo/39910843/
+- orb-personal.jpg https://www.pexels.com/photo/10513302/
+- orb-water.jpg https://www.pexels.com/photo/9398212/ (no-WebGL fallback background)
+
+Design reference reviewed for principles only (no assets or code copied): mesh3d.gallery

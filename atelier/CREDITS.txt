@@ -1,0 +1,25 @@
+Complete Funding — Concept C "Atelier" — asset provenance (reviewed 3 October 2026)
+
+Brand asset
+- assets/img/logo.svg: Existing Complete Funding logo from the source repository, reused byte-for-byte without alteration.
+- Lender logos: existing partner logos from the source repository, converted to single-colour versions for legibility (lenders-white / lenders-ink). Confirm usage rights with each lender before launch.
+
+Libraries (self-hosted)
+- GSAP 3.15 core, ScrollTrigger, SplitText: GreenSock Standard "no charge" licence (https://gsap.com/standard-license).
+- Lenis 1.3 smooth scroll: MIT licence.
+
+Typefaces (SIL Open Font License 1.1; licences in assets/fonts/)
+- Bodoni Moda (variable, optical size), Figtree (variable) via Fontsource.
+
+Video (Pexels licence)
+- sydney-aerial-720.mp4 / sydney-aerial-540.mp4: "Aerial View of Sydney Harbor with Skyline", Macourt Media — https://www.pexels.com/video/38803844/ (the creator asks for a link to macourtmedia.com where possible)
+
+Photography (Pexels licence)
+- ate-car.jpg https://www.pexels.com/photo/11233114/
+- ate-yacht.jpg https://www.pexels.com/photo/10514509/
+- ate-truck.jpg https://www.pexels.com/photo/28264496/ (Hitesh Sarain)
+- ate-moto.jpg https://www.pexels.com/photo/4922616/ (Ekaterina Belinskaya)
+- ate-business.jpg https://www.pexels.com/photo/36729740/
+- ate-personal.jpg https://www.pexels.com/photo/4172906/ (Gustavo Fring)
+- ate-outback.jpg https://www.pexels.com/photo/32915492/
+- ate-harbour.jpg https://www.pexels.com/photo/1680173/

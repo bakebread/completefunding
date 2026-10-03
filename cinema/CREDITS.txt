@@ -1,0 +1,26 @@
+Complete Funding — Concept A "Cinema" — asset provenance (reviewed 3 October 2026)
+
+Brand asset
+- assets/img/logo.svg: Existing Complete Funding logo from the source repository, reused byte-for-byte without alteration.
+- Lender logos: existing partner logos from the source repository, converted to single-colour versions for legibility (lenders-white / lenders-ink). Confirm usage rights with each lender before launch.
+
+Libraries (self-hosted)
+- GSAP 3.15 core, ScrollTrigger, SplitText: GreenSock Standard "no charge" licence (https://gsap.com/standard-license).
+- Lenis 1.3 smooth scroll: MIT licence.
+
+Typefaces (SIL Open Font License 1.1; licences in assets/fonts/)
+- Cormorant Garamond (variable), Jost (variable) via Fontsource.
+
+Video (Pexels licence, free for commercial use)
+- coast-drive-1080.mp4: "Aerial View of Car Driving Along Coastal Road", Yaroslav Shuraev — https://www.pexels.com/video/5419074/
+- yacht-topdown-720.mp4: "Yachts on the Sea", Zlatin Georgiev — https://www.pexels.com/video/7555069/
+- mirror-sunset-720.mp4: "A Sunset Sky Reflected on a Car Side View Mirror", Mihriban Bşrı — https://www.pexels.com/video/16067295/
+- highway-twilight-720.mp4: "Scenic Highway at Twilight Sunset", Andrew Swarga — https://www.pexels.com/video/34517395/
+- *-poster.jpg: frames captured from the clips above.
+
+Photography (Pexels licence)
+- cin-car.jpg https://www.pexels.com/photo/6509106/
+- cin-truck.jpg https://www.pexels.com/photo/32446605/
+- cin-moto.jpg https://www.pexels.com/photo/15038722/ (Koushik Bala)
+- cin-workshop.jpg https://www.pexels.com/photo/3822850/ (Andrea Piacquadio)
+- cin-harbour.jpg https://www.pexels.com/photo/32062131/

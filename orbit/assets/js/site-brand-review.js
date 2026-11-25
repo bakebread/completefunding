@@ -129,18 +129,44 @@
     onToggle: (s) => { calcActive = s.isActive; orbit.setArc(s.isActive ? principalShare * 2 : 1.72); orbit.render && orbit.render(); }
   });
 
-  /* ---------- Enquiry ---------- */
-  $("#enquiry").addEventListener("submit", (e) => {
+  /* ---------- Enquiry: no network submission or browser storage ---------- */
+  const enquiry = $("#enquiry");
+  const enquiryButton = $('button[type="submit"]', enquiry);
+  const allowedTypes = new Set(["Car loan","Boat loan","Truck finance","Motorbike loan","Personal loan","Business loan"]);
+  const field = (name) => enquiry.elements.namedItem(name);
+  const hasControl = (s) => /[\u0000-\u001f\u007f-\u009f\u2028\u2029]/u.test(s);
+  $("#calc").addEventListener("submit", (e) => e.preventDefault());
+  enquiry.addEventListener("submit", (e) => {
     e.preventDefault();
-    const f = e.target; let ok = true;
-    $$("input[required]", f).forEach((i) => { const bad = !i.value.trim() || (i.type === "email" && !/^\S+@\S+\.\S+$/.test(i.value)); i.classList.toggle("is-invalid", bad); if (bad) ok = false; });
+    const name = field("name").value.trim();
+    const phone = field("phone").value.trim();
+    const email = field("email").value.trim();
+    const type = field("type").value;
+    const digits = phone.replace(/\D/g, "");
+    const checks = [
+      [field("name"), name.length > 0 && name.length <= 100 && !hasControl(name)],
+      [field("phone"), phone.length <= 32 && /^\+?[0-9 ()-]+$/.test(phone) && digits.length >= 7 && digits.length <= 15 && !hasControl(phone)],
+      [field("email"), email.length <= 254 && field("email").validity.valid && !hasControl(email)]
+    ];
     const st = $("#enquiry-status");
-    if (!ok) { st.textContent = "Please add your name, phone and a valid email."; return; }
-    const d = Object.fromEntries(new FormData(f));
-    const body = `Name: ${d.name}\nPhone: ${d.phone}\nEmail: ${d.email}\nFinance type: ${d.type}`;
-    window.location.href = `mailto:info@completefunding.com.au?subject=${encodeURIComponent("Finance enquiry: " + d.type)}&body=${encodeURIComponent(body)}`;
-    st.textContent = "Your email app will open with your enquiry. You can also call us on 1300 008 618.";
+    let invalid = null;
+    for (const [input, valid] of checks) {
+      input.classList.toggle("is-invalid", !valid);
+      if (valid) input.removeAttribute("aria-invalid"); else { input.setAttribute("aria-invalid","true"); if (!invalid) invalid = input; }
+    }
+    if (invalid || !allowedTypes.has(type)) {
+      st.textContent = "Please check your name, phone, email and finance type.";
+      if (invalid) invalid.focus();
+      return;
+    }
+    // The recipient is fixed; finance type is allowlisted. User values appear only in the encoded body.
+    const body = ["Name: "+name,"Phone: "+phone,"Email: "+email,"Finance type: "+type].join("\r\n");
+    const url = "mailto:info@completefunding.com.au?subject="+encodeURIComponent("Finance enquiry: "+type)+"&body="+encodeURIComponent(body);
+    if (url.length > 4000) { st.textContent = "Please shorten your details or contact us by phone."; return; }
+    st.textContent = "Your email app will open. Review the message before sending it.";
+    window.location.href = url;
   });
+  enquiryButton.disabled = false;
 
   /* ---------- Reviews carousel (CSS 3D) ---------- */
   const ringEl = $("#carousel-ring");

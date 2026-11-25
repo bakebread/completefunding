@@ -17,7 +17,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FinancialService","name":"Complete Funding","url":"https://enterprisestackcom.github.io/completefunding/","telephone":"+61-1300-008-618","email":"info@completefunding.com.au","areaServed":"AU"}
   </script>
-<meta name="robots" content="noindex,nofollow"><style>#cf-emblem{position:fixed;left:50%;top:50%;width:min(68vh,48vw);aspect-ratio:1;z-index:0;pointer-events:none;transition:none;filter:drop-shadow(0 18px 25px #0009);will-change:transform}#cf-emblem svg{width:100%;height:100%;overflow:visible}#gl{opacity:0;transition:none}.cf-review{position:fixed;z-index:10000;right:16px;bottom:16px;background:#101b22f5;border:1px solid #40545c;border-radius:9px;padding:10px 12px;color:#fff;font:12px system-ui;display:grid;gap:6px}.cf-review span{letter-spacing:.1em;text-transform:uppercase;color:#a9d8de}.cf-review button{font:inherit;background:transparent;color:#c8e0e3;border:1px solid #40545c;padding:7px;border-radius:5px;cursor:pointer}.cf-review button[aria-pressed=true]{background:#21616c;color:white}.cf-review button:focus-visible{outline:2px solid #fff}@media(max-width:760px){#cf-emblem{width:min(57vw,46vh)}.cf-review{right:6px;bottom:6px;font-size:10px}}@media(prefers-reduced-motion:reduce){#cf-emblem,#gl{transition:none}}</style></head>
+<meta name="robots" content="noindex,nofollow"><style>#cf-emblem{position:fixed;left:50%;top:50%;width:min(68vh,48vw);aspect-ratio:1;z-index:0;pointer-events:none;transition:none;filter:drop-shadow(0 18px 25px #0009);will-change:transform}#cf-emblem svg{width:100%;height:100%;overflow:visible}#gl{opacity:1;transition:none}.cf-review{position:fixed;z-index:10000;right:16px;bottom:16px;background:#101b22f5;border:1px solid #40545c;border-radius:9px;padding:10px 12px;color:#fff;font:12px system-ui;display:grid;gap:6px}.cf-review span{letter-spacing:.1em;text-transform:uppercase;color:#a9d8de}.cf-review button{font:inherit;background:transparent;color:#c8e0e3;border:1px solid #40545c;padding:7px;border-radius:5px;cursor:pointer}.cf-review button[aria-pressed=true]{background:#21616c;color:white}.cf-review button:focus-visible{outline:2px solid #fff}@media(max-width:760px){#cf-emblem{width:min(57vw,46vh)}.cf-review{right:6px;bottom:6px;font-size:10px}}@media(prefers-reduced-motion:reduce){#cf-emblem,#gl{transition:none}}.no-webgl .bg-fallback:after{content:"";position:absolute;right:8%;top:15%;width:min(46vw,520px);aspect-ratio:1;background:url("assets/img/logo.svg") right center/277% auto no-repeat;opacity:.65}@media(max-width:760px){.no-webgl .bg-fallback:after{right:25%;width:50vw}}</style></head>
 <body class="is-loading">
   <a class="skip-link" href="#main">Skip to content</a>
   <canvas id="gl" aria-hidden="true"></canvas>
@@ -181,11 +181,11 @@
     <section class="instrument" id="instrument">
       <div class="wrap instrument__grid">
         <div class="instrument__ring" aria-hidden="true">
-          <p class="instrument__legend"><span class="dot dot--chrome"></span>Ring = principal<br><span class="dot dot--gap"></span>Gap = interest</p>
+          <p class="instrument__legend">Principal and interest are shown in the repayment breakdown.</p>
         </div>
         <div class="panel">
           <p class="label">( 03 ) &nbsp;Repayment instrument</p>
-          <h2 class="h2 h2--sm">Watch your loan <span class="grad">take shape.</span></h2>
+          <h2 class="h2 h2--sm">Understand your <span class="grad">repayments.</span></h2>
           <form id="calc" class="calc" onsubmit="return false">
             <div class="calc__display" aria-live="polite">
               <span class="calc__per" id="res-label">per month</span>
@@ -323,86 +323,7 @@
   <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/vendor/SplitText.min.js"></script>
   <script src="assets/vendor/lenis.min.js"></script>
-  <script src="assets/js/scene.js"></script>
+  <script src="assets/js/scene-emblem-v3.js"></script>
   <script src="assets/js/site.js"></script>
-<script>(()=>{"use strict";
-const paths=["M 825.671875 3.9375 C 756.730469 3.9375 696.5 41.945312 664.828125 98.105469 L 719.378906 98.105469 C 745 68.007812 783.140625 48.882812 825.671875 48.882812 C 902.632812 48.882812 965.242188 111.496094 965.242188 188.457031 C 965.242188 265.417969 902.632812 328.03125 825.671875 328.03125 C 774.636719 328.03125 729.921875 300.492188 705.578125 259.503906 L 768.472656 259.503906 L 796.597656 214.5625 L 642.996094 214.5625 C 644.242188 223.316406 646.105469 231.878906 648.539062 240.195312 L 648.554688 240.25 C 648.878906 241.359375 649.214844 242.464844 649.5625 243.5625 C 649.640625 243.820312 649.726562 244.074219 649.808594 244.332031 C 650.074219 245.167969 650.34375 246 650.621094 246.832031 C 650.734375 247.160156 650.84375 247.488281 650.957031 247.816406 C 651.230469 248.632812 651.515625 249.441406 651.804688 250.25 C 651.902344 250.519531 651.996094 250.796875 652.09375 251.0625 C 652.480469 252.132812 652.875 253.203125 653.28125 254.261719 C 653.324219 254.375 653.371094 254.488281 653.414062 254.601562 C 653.777344 255.539062 654.148438 256.476562 654.523438 257.410156 C 654.648438 257.71875 654.777344 258.027344 654.902344 258.335938 C 655.0625 258.722656 655.21875 259.117188 655.382812 259.503906 L 655.394531 259.503906 C 683.273438 326.078125 749.09375 372.976562 825.671875 372.976562 C 927.414062 372.976562 1010.191406 290.199219 1010.191406 188.457031 C 1010.191406 86.714844 927.414062 3.9375 825.671875 3.9375 ","M 655.382812 117.414062 C 651.925781 125.671875 649.054688 134.234375 646.8125 143.046875 L 646.808594 143.046875 C 646.734375 143.34375 646.660156 143.644531 646.589844 143.949219 C 646.464844 144.441406 646.34375 144.929688 646.226562 145.421875 C 646.121094 145.859375 646.019531 146.296875 645.917969 146.726562 C 645.804688 147.226562 645.6875 147.722656 645.578125 148.222656 C 645.480469 148.660156 645.386719 149.101562 645.289062 149.542969 C 645.183594 150.039062 645.074219 150.535156 644.972656 151.035156 C 644.878906 151.484375 644.789062 151.9375 644.703125 152.386719 C 644.605469 152.875 644.503906 153.371094 644.410156 153.863281 C 644.320312 154.335938 644.234375 154.804688 644.148438 155.285156 C 644.0625 155.75 643.972656 156.222656 643.890625 156.695312 C 643.800781 157.222656 643.714844 157.753906 643.628906 158.28125 C 643.558594 158.703125 643.484375 159.121094 643.417969 159.546875 C 643.316406 160.199219 643.21875 160.851562 643.121094 161.507812 C 643.082031 161.789062 643.035156 162.070312 642.996094 162.355469 C 641.78125 170.882812 641.152344 179.597656 641.152344 188.457031 C 641.152344 190.730469 641.195312 193 641.277344 195.253906 L 686.265625 195.253906 C 686.15625 193.003906 686.097656 190.734375 686.097656 188.457031 C 686.097656 179.535156 686.941406 170.8125 688.546875 162.355469 L 858.59375 162.355469 L 820.042969 117.414062 L 655.382812 117.414062 ","M 800.367188 94.472656 L 858.59375 162.355469 L 886.71875 117.414062 Z M 800.367188 94.472656 ","M 710.246094 191.621094 L 768.472656 259.503906 L 796.597656 214.5625 Z M 710.246094 191.621094 "];
-const modes=[{name:"Signature Teal",outer:["#032b38","#007e97","#a1f8fa","#08677e","#003241"],inner:["#075265","#4bd5db","#eaffff","#168fa1","#003748"],depth:15,tilt:12},{name:"Executive Titanium",outer:["#111a21","#536670","#cbd6db","#35454e","#10181f"],inner:["#07515e","#33bfc9","#e5ffff","#258b97","#08343d"],depth:24,tilt:17},{name:"Platinum Fusion",outer:["#334751","#a8c6cf","#fff","#7797a3","#213c46"],inner:["#004653","#00a3b8","#baffff","#00869c","#003a48"],depth:10,tilt:8}];
-let mode=Math.max(0,Math.min(2,parseInt(new URLSearchParams(location.search).get("design")||"1",10)-1||0));
-const ns="http://www.w3.org/2000/svg",root=document.createElement("div");root.id="cf-emblem";root.setAttribute("aria-hidden","true");document.body.prepend(root);
-const make=(tag,attrs,parent)=>{const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));parent.append(el);return el};
-const svg=make("svg",{viewBox:"600 -40 460 460"},root),defs=make("defs",{},svg),stack=make("g",{},svg),face=make("g",{},svg);
-const gradients=[0,1].map(k=>make("linearGradient",{id:"cf-metal-"+k,gradientUnits:"userSpaceOnUse",x1:655,y1:10,x2:985,y2:370},defs));
-const edge=make("linearGradient",{id:"cf-edge",x1:"0%",y1:"0%",x2:"100%",y2:"100%"},defs);
-[[0,"#d5ffff"],[.27,"#315863"],[.62,"#07191f"],[1,"#70a8af"]].forEach(([o,c])=>make("stop",{offset:o,"stop-color":c},edge));
-const panel=document.createElement("div");panel.className="cf-review";panel.innerHTML='<span id="cf-mode"></span><div><button type="button">01 Teal</button><button type="button">02 Titanium</button><button type="button">03 Platinum</button></div>';document.body.append(panel);
-function build(){const cfg=modes[mode];stack.replaceChildren();face.replaceChildren();gradients.forEach((g,k)=>{g.replaceChildren();(k?cfg.inner:cfg.outer).forEach((c,i)=>make("stop",{offset:[0,.25,.39,.63,1][i],"stop-color":c},g))});for(let z=cfg.depth;z>=1;z--)paths.forEach(d=>make("path",{d,transform:"translate("+(-z*.55)+" "+(z*.7)+")",fill:"url(#cf-edge)",stroke:"#102a32","stroke-width":".55"},stack));paths.forEach((d,i)=>make("path",{d,fill:"url(#cf-metal-"+(i?1:0)+")",stroke:i?"#a9eff1":"#7bc1c9","stroke-opacity":".65","stroke-width":"1.1","stroke-linejoin":"round"},face));panel.querySelectorAll("button").forEach((b,i)=>b.setAttribute("aria-pressed",String(i===mode)));document.getElementById("cf-mode").textContent=cfg.name;}
-panel.querySelectorAll("button").forEach((b,i)=>b.onclick=()=>{mode=i;const url=new URL(location.href);url.searchParams.set("design",i+1);history.replaceState(null,"",url);build()});build();
-/* A continuous, art-directed scroll track. Keep the mark legible and
-   separate its motion from the original torus's extreme camera zoom. */
-const reduced=matchMedia("(prefers-reduced-motion: reduce)"),fine=matchMedia("(pointer:fine)"),calc=document.getElementById("instrument"),gl=document.getElementById("gl");
-const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-const mix=(a,b,t)=>a+(b-a)*t;
-const ease=t=>{t=clamp(t);return t*t*t*(10+t*(-15+6*t));};
-const damp=(a,b,dt,tau)=>mix(a,b,1-Math.exp(-dt/tau));
-const sections=["hero","about","finance","instrument","process","lenders","reviews","contact"].map(id=>document.getElementById(id));
-let track=[],last=0,clock=0,prevY=scrollY,velocity=0,px=0,py=0,sx=0,sy=0,current=null,dirty=true,lastMeasure=0;
-const bounds=()=>sections.map(el=>{const r=el.getBoundingClientRect();return {top:r.top+scrollY,bottom:r.bottom+scrollY};});
-function layout(){
- const H=innerHeight,W=innerWidth,mobile=W<760,B=bounds(),max=Math.max(0,document.documentElement.scrollHeight-H);
- // Each pose is x/y as a fraction of the viewport, scale, pitch, yaw, roll, opacity.
- // The finance gallery remains on one side; the calculator handover happens
- // while the mark is already dimming, not during a lateral sweep.
- const poses=mobile?[
- [0,-.20,1, -7,8,-2,.92],[.015,-.20,.84,-6,12,0,.68],[.035,-.17,.73,-4,15,2,.43],[0,-.13,.76,-4,4,0,0],[0,-.15,.72,-5,-7,-2,.30],[.02,-.19,.70,-7,-10,-2,.48],[.02,-.19,.72,-6,-6,-1,.44],[0,-.18,.96,-7,5,0,.85]
- ]:[
- [.19,-.045,1.05,-9,10,-3,1],[.255,-.08,.93,-7,18,-1,.72],[.28,-.045,.78,-5,23,2,.48],[-.19,-.015,.78,-3,0,0,0],[.24,-.035,.80,-8,-12,-3,.42],[.27,-.10,.67,-7,-18,-2,.62],[.23,-.08,.72,-5,-9,0,.56],[.19,-.025,1.03,-8,8,-2,.94]
- ];
- const add=(y,p)=>({y:clamp(y,0,max),p});
- const a=[add(0,poses[0]),add(B[1].top-H*.90,poses[0]),add(B[1].top-H*.12,poses[1]),add(B[2].top-H*.24,poses[2]),add(B[3].top-H*.85,poses[2]),add(B[3].top-H*.30,poses[3]),add(B[3].bottom-H*.48,poses[3]),add(B[4].top-H*.05,poses[4]),add(B[5].top-H*.35,poses[5]),add(B[6].top-H*.30,poses[6]),add(B[7].top-H*.08,poses[7]),add(max,poses[7])];
- track=[];for(const k of a){if(!track.length||k.y>track[track.length-1].y+1)track.push(k);}
- dirty=false;
-}
-function target(y){
- let i=0;while(i<track.length-2&&y>track[i+1].y)i++;
- const a=track[i],b=track[Math.min(i+1,track.length-1)],u=ease((y-a.y)/Math.max(1,b.y-a.y));
- return a.p.map((v,k)=>mix(v,b.p[k],u));
-}
-addEventListener("resize",()=>{dirty=true},{passive:true});
-addEventListener("load",()=>{dirty=true},{once:true});
-if(document.fonts?.ready)document.fonts.ready.then(()=>{dirty=true});
-if(window.ScrollTrigger)ScrollTrigger.addEventListener("refresh",()=>{dirty=true});
-if(window.ResizeObserver){const ro=new ResizeObserver(()=>{dirty=true});sections.forEach(el=>ro.observe(el));}
-addEventListener("pointermove",e=>{if(fine.matches){px=clamp(e.clientX/innerWidth-.5,-.5,.5);py=clamp(e.clientY/innerHeight-.5,-.5,.5)}},{passive:true});
-document.addEventListener("pointerleave",()=>{px=py=0});
-function draw(t){
- const dt=last?clamp((t-last)/1000,.001,.05):1/60;last=t;
- if(dirty||t-lastMeasure>1500){layout();lastMeasure=t;}
- const y=scrollY,H=innerHeight,W=innerWidth,quiet=reduced.matches,mobile=W<760;
- const desired=target(y);
- const rawVelocity=clamp((y-prevY)/dt/Math.max(H,1),-3,3);prevY=y;
- velocity=damp(velocity,quiet?0:rawVelocity,dt,.25);
- sx=damp(sx,quiet||!fine.matches?0:px,dt,.28);sy=damp(sy,quiet||!fine.matches?0:py,dt,.28);
- if(!current||quiet)current=desired.slice();else current=current.map((v,k)=>damp(v,desired[k],dt,k===6?.19:.23));
- clock+=quiet?0:dt;
- const breath=quiet?0:Math.sin(clock*.42),drift=quiet?0:Math.sin(clock*.32+1.2);
- const rect=calc.getBoundingClientRect();
- const entering=ease((H*.87-rect.top)/(H*.47)),leaving=ease((rect.bottom-H*.10)/(H*.42));
- const handover=entering*leaving;
- const alpha=quiet?desired[6]:current[6];
- // Cross-fade the two visual instruments over nearly half a viewport.
- root.style.opacity=String(clamp(alpha*(1-handover)));
- if(gl)gl.style.opacity=String(handover);
- const x=current[0]*W+(quiet?0:sx*(mobile?0:12)),yy=current[1]*H+(quiet?0:breath*5+velocity*7);
- const scale=current[2]*(1+(quiet?0:drift*.012));
- const pitch=current[3]-(quiet?0:sy*5+velocity*1.7);
- const yaw=current[4]+(quiet?0:sx*8+breath*3);
- const roll=current[5]+(quiet?0:drift*.7);
- root.style.transform="translate3d("+x+"px,"+yy+"px,0) translate(-50%,-50%) perspective(1400px) rotateX("+pitch+"deg) rotateY("+yaw+"deg) rotateZ("+roll+"deg) scale("+scale+")";
- const light=quiet?0:breath*18+sx*24;
- gradients.forEach(g=>{g.setAttribute("x1",655+light);g.setAttribute("x2",985+light*.85)});
- requestAnimationFrame(draw);
-}
-requestAnimationFrame(draw);
-})();</script></body>
+<script>(()=>{const names=["Signature Teal","Executive Titanium","Platinum Fusion"];let i=Math.max(0,Math.min(2,(parseInt(new URLSearchParams(location.search).get("design"),10)||1)-1));const p=document.createElement("div");p.className="cf-review";p.innerHTML='<span id="cf-mode"></span><div><button type="button">01 Teal</button><button type="button">02 Titanium</button><button type="button">03 Platinum</button></div>';document.body.append(p);const sync=()=>{p.querySelector("span").textContent=names[i];p.querySelectorAll("button").forEach((b,j)=>b.setAttribute("aria-pressed",String(i===j)));};p.querySelectorAll("button").forEach((b,j)=>b.onclick=()=>{i=j;const u=new URL(location.href);u.searchParams.set("design",i+1);history.replaceState(null,"",u);window.orbit?.setDesign?.(i);sync()});sync()})();</script></body>
 </html>
